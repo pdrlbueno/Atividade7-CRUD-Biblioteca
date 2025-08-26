@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nacionalidade = $_POST['nacionalidade'];
     $nascimnto = $_POST['nascimento'];
 
-    $sql = " INSERT INTO autores (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
+    $sql = " INSERT INTO livros (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
 
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <form method="POST" action="create_autores.php">
+    <form method="POST" action="create_livros.php">
 
         <label for="name">Nome:</label>
         <input type="text" name="name" required>
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </form>
 
-    <a href="read_autores.php">Ver registros.</a>
+    <a href="read_livros.php">Ver registros.</a>
 
 </body>
 

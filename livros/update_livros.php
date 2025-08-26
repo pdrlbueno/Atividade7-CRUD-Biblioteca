@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nacionalidade = $_POST['nacionalidade'];
     $nascimnto = $_POST['nascimento'];
 
-    $sql = "UPDATE autores SET nome_autor ='$nome',nacionalidade_autor ='$nacionalidade',ano_nascimento_autor = '$nascimnto' WHERE id=$id";
+    $sql = "UPDATE livros SET nome_autor ='$nome',nacionalidade_autor ='$nacionalidade',ano_nascimento_autor = '$nascimnto' WHERE id=$id";
 
     if ($conn->query($sql) === true) {
         echo "Registro atualizado com sucesso.
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit(); 
 }
 
-$sql = "SELECT * FROM autores WHERE id=$id";
+$sql = "SELECT * FROM livros WHERE id=$id";
 $result = $conn -> query($sql);
 $row = $result -> fetch_assoc();
 
@@ -41,7 +41,7 @@ $row = $result -> fetch_assoc();
 
 <body>
 
-    <form method="POST" action="update_autores.php?id=<?php echo $row['id'];?>">
+    <form method="POST" action="update_livros.php?id=<?php echo $row['id'];?>">
 
         <label for="name">Nome:</label>
         <input type="text" name="name" value="<?php echo $row['name'];?>" required>
@@ -56,7 +56,7 @@ $row = $result -> fetch_assoc();
 
     </form>
 
-    <a href="read_autores.php">Ver registros.</a>
+    <a href="read_livros.php">Ver registros.</a>
 
 </body>
 
