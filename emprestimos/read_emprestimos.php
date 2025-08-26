@@ -2,7 +2,7 @@
 
 include '../db.php';
 
-$sql = "SELECT * FROM autores";
+$sql = "SELECT * FROM emprestimos";
 
 $result = $conn->query($sql);
 
@@ -26,8 +26,8 @@ if ($result->num_rows > 0) {
                 <td> {$row['nacionalidade_autor']} </td>
                 <td> {$row['ano_nascimento_autor']} </td>
                 <td> 
-                    <a href='update_autores.php?id={$row['id']}'>Editar<a>
-                    <a href='delete_autores.php?id={$row['id']}'>Excluir<a>
+                    <a href='update_emprestimos.php?id={$row['id']}'>Editar<a>
+                    <a href='delete_emprestimos.php?id={$row['id']}'>Excluir<a>
                 
                 </td>
               </tr>   
@@ -40,4 +40,4 @@ if ($result->num_rows > 0) {
 
 $conn -> close();
 
-echo "<a href='create_autores.php'>Inserir novo Registro</a>";
+echo "<a href='create_emprestimos.php'>Inserir novo Registro</a>";

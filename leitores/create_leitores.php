@@ -5,10 +5,10 @@ include '../db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $nome = $_POST['name'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $nascimnto = $_POST['nascimento'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
 
-    $sql = " INSERT INTO autores (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
+    $sql = " INSERT INTO leitores (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
 
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
@@ -31,22 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <form method="POST" action="create_autores.php">
+    <form method="POST" action="create_leitores.php">
 
         <label for="name">Nome:</label>
         <input type="text" name="name" required>
 
-        <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
 
-        <label for="nascimento">Ano de nascimento:</label>
-        <input type="number" name="nascimento" required>
+        <label for="telefone">Telefone:</label>
+        <input type="number" name="telefone" required>
 
         <input type="submit" value="Adicionar">
 
     </form>
 
-    <a href="read_autores.php">Ver registros.</a>
+    <a href="read_leitores.php">Ver registros.</a>
 
 </body>
 

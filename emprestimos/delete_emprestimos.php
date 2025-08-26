@@ -3,11 +3,11 @@
 include '../db.php';
 $id = $_GET['id'];
 
-$sql = " DELETE FROM autores WHERE id=$id ";
+$sql = " DELETE FROM emprestimos WHERE id=$id ";
 
 if ($conn->query($sql) === true) {
     echo "Registro excluído com sucesso.
-        <a href='read_autores.php'>Ver registros.</a>
+        <a href='read_emprestimos.php'>Ver registros.</a>
         ";
 } else {
     echo "Erro " . $sql . '<br>' . $conn->error;

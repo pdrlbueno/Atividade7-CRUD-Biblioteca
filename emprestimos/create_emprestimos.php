@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <form method="POST" action="create_autores.php">
+    <form method="POST" action="create_emprestimos.php">
 
         <label for="name">Nome:</label>
         <input type="text" name="name" required>
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </form>
 
-    <a href="read_autores.php">Ver registros.</a>
+    <a href="read_emprestimos.php">Ver registros.</a>
 
 </body>
 

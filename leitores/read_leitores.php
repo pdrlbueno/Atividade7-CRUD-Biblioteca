@@ -2,7 +2,7 @@
 
 include '../db.php';
 
-$sql = "SELECT * FROM autores";
+$sql = "SELECT * FROM leitores";
 
 $result = $conn->query($sql);
 
@@ -22,12 +22,12 @@ if ($result->num_rows > 0) {
 
         echo "<tr>
                 <td> {$row['id']} </td>
-                <td> {$row['nome_autor']} </td>
-                <td> {$row['nacionalidade_autor']} </td>
-                <td> {$row['ano_nascimento_autor']} </td>
+                <td> {$row['nome_leitor']} </td>
+                <td> {$row['email_leitor']} </td>
+                <td> {$row['telefone_leitor']} </td>
                 <td> 
-                    <a href='update_autores.php?id={$row['id']}'>Editar<a>
-                    <a href='delete_autores.php?id={$row['id']}'>Excluir<a>
+                    <a href='update_leitores.php?id={$row['id']}'>Editar<a>
+                    <a href='delete_leitores.php?id={$row['id']}'>Excluir<a>
                 
                 </td>
               </tr>   
@@ -40,4 +40,4 @@ if ($result->num_rows > 0) {
 
 $conn -> close();
 
-echo "<a href='create_autores.php'>Inserir novo Registro</a>";
+echo "<a href='create_leitores.php'>Inserir novo Registro</a>";
