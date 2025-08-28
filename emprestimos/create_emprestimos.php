@@ -4,11 +4,13 @@ include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $nome = $_POST['name'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $nascimnto = $_POST['nascimento'];
+    $emprestimo = $_POST['emprestimo'];
+    $devolucao = $_POST['devolucao'];
+    $livro = $_POST['livro'];
+    $leitor = $_POST['leitor'];
 
-    $sql = " INSERT INTO autores (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
+
+    $sql = " INSERT INTO emprestimos (data_emprestimo,data_devolucao,id_livro,id_leitor) VALUE ('$emprestimo','$devolucao','$livro','$leitor')";
 
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
@@ -33,14 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form method="POST" action="create_emprestimos.php">
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" required>
+        <label for="emprestimo">Data do emprestimo:</label>
+        <input type="date" name="emprestimo" required>
 
-        <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade" required>
+        <label for="devolucao">Data de devolução:</label>
+        <input type="date" name="devolucao" required>
 
-        <label for="nascimento">Ano de nascimento:</label>
-        <input type="number" name="nascimento" required>
+        <label for="livro">Id livro:</label>
+        <input type="number" name="livro" required>
+
+        <label for="leitor">Id leitor:</label>
+        <input type="number" name="leitor" required>
 
         <input type="submit" value="Adicionar">
 

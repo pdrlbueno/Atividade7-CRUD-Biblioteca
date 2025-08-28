@@ -6,11 +6,13 @@ $id = $_GET['id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $nome = $_POST['name'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $nascimnto = $_POST['nascimento'];
+    $emprestimo = $_POST['emprestimo'];
+    $devolucao = $_POST['devolucao'];
+    $livro = $_POST['livro'];
+    $leitor = $_POST['leitor'];
 
-    $sql = "UPDATE emprestimos SET nome_autor ='$nome',nacionalidade_autor ='$nacionalidade',ano_nascimento_autor = '$nascimnto' WHERE id=$id";
+
+    $sql = "UPDATE emprestimos SET data_emprestimo ='$emprestimo',data_devolucao ='$devolucao',id_livro = '$livro', id_leitor = '$leitor' WHERE id=$id";
 
     if ($conn->query($sql) === true) {
         echo "Registro atualizado com sucesso.
@@ -43,14 +45,17 @@ $row = $result -> fetch_assoc();
 
     <form method="POST" action="update_emprestimos.php?id=<?php echo $row['id'];?>">
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" value="<?php echo $row['name'];?>" required>
+        <label for="emprestimo">Data do emprestimo:</label>
+        <input type="date" name="emprestimo" value="<?php echo $row['name'];?>" required>
 
-        <label for="nacionalidade">nacionalidade:</label>
-        <input type="text" name="nacionalidade" value="<?php echo $row['nacionalidade'];?>" required>
+        <label for="devolucao">Data de devolução:</label>
+        <input type="date" name="devolucao" value="<?php echo $row['nacionalidade'];?>" required>
 
-         <label for="nascimento">Ano de nascimento:</label>
-        <input type="number" name="nascimento" value="<?php echo $row['nascimento'];?>" required>
+        <label for="livro">Id livro:</label>
+        <input type="number" name="livro" value="<?php echo $row['nascimento'];?>" required>
+
+        <label for="leitor">Id leitor:</label>
+        <input type="number" name="leitor" value="<?php echo $row['nascimento'];?>" required>
 
         <input type="submit" value="Atualizar">
 

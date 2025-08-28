@@ -22,9 +22,10 @@ if ($result->num_rows > 0) {
 
         echo "<tr>
                 <td> {$row['id']} </td>
-                <td> {$row['nome_autor']} </td>
-                <td> {$row['nacionalidade_autor']} </td>
-                <td> {$row['ano_nascimento_autor']} </td>
+                <td> {$row['data_emprestimo']} </td>
+                <td> {$row['data_devolucao']} </td>
+                <td> {$row['id_livro']} </td>
+                <td> {$row['id_leitor']} </td>
                 <td> 
                     <a href='update_emprestimos.php?id={$row['id']}'>Editar<a>
                     <a href='delete_emprestimos.php?id={$row['id']}'>Excluir<a>
