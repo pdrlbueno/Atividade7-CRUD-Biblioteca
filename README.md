@@ -1,0 +1,1 @@
+Para funcionamento completo se deve inserir todos os arquivos dentro de uma pasta "htdocs" dentro da pasta do XAMP, então abra o servidor no navegador e copie o código do banco de dados do arquivo SQl  para o PhPMyAdmin, então basta navegar entre as paginas dentro das pastas e usar os cruds.
