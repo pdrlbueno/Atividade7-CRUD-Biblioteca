@@ -22,9 +22,9 @@ if ($result->num_rows > 0) {
 
         echo "<tr>
                 <td> {$row['id']} </td>
-                <td> {$row['nome_autor']} </td>
-                <td> {$row['nacionalidade_autor']} </td>
-                <td> {$row['ano_nascimento_autor']} </td>
+                <td> {$row['genero_livro']} </td>
+                <td> {$row['ano_publicacao_livro']} </td>
+                <td> {$row['id_autor']} </td>
                 <td> 
                     <a href='update_livros.php?id={$row['id']}'>Editar<a>
                     <a href='delete_livros.php?id={$row['id']}'>Excluir<a>

@@ -4,11 +4,11 @@ include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $nome = $_POST['name'];
-    $nacionalidade = $_POST['nacionalidade'];
-    $nascimnto = $_POST['nascimento'];
+    $genero = $_POST['genero'];
+    $publicacao = $_POST['publicacao'];
+    $autor = $_POST['autor'];
 
-    $sql = " INSERT INTO livros (nome_autor,nacionalidade_autor,ano_nascimento_autor) VALUE ('$nome','$nacionalidade','$nascimnto')";
+    $sql = " INSERT INTO livros (genero_livro,ano_publicacao_livro,id_autor) VALUE ('$genero','$publicacao','$autor')";
 
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form method="POST" action="create_livros.php">
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" required>
+        <label for="genero">Gênero:</label>
+        <input type="text" name="genero" required>
 
-        <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade" required>
+        <label for="publicacao">Ano de publicação:</label>
+        <input type="number" name="publicacao" required>
 
-        <label for="nascimento">Ano de nascimento:</label>
-        <input type="number" name="nascimento" required>
+        <label for="autor">Id do autor:</label>
+        <input type="number" name="autor" required>
 
         <input type="submit" value="Adicionar">
 
